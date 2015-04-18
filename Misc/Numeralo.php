@@ -96,8 +96,10 @@ class Numeralo
 			throw new \InvalidArgumentException('Only numbers allowed');
 		if($number > 3999999)
 			throw new \InvalidArgumentException('Number cannot be greater than 3,999,999');
-			
-
+		
+		//floats are not supported
+		$number = (int) $number;
+		
 		$numerals = '';
 		$number_string = strrev((string) $number);
 		$length = strlen($number_string);
